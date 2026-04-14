@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Customer Survey Kiosk App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React-based survey application designed to collect customer feedback in a shop (like a kiosk system).
 
-## Available Scripts
+The idea was to keep the flow smooth and easy for users while also making the code flexible enough to handle changes like adding more questions later.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## What this app does
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Shows a welcome screen before starting
+* Asks 5 survey questions (rating + text)
+* Displays progress like 1/5, 2/5, etc.
+* Allows users to go **next, back, or skip**
+* Validates inputs before moving forward
+* Limits text input (for better feedback quality)
+* Shows a confirmation before final submission
+* Displays a thank you screen and resets automatically
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Data handling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Each response is stored with:
 
-### `npm run build`
+* Question ID
+* Answer
+* Session ID (to identify each user)
+* Status (`COMPLETED`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Backend (optional)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I also added a simple backend using Node.js and Express:
 
-### `npm run eject`
+* Stores responses using an API (`POST /submit`)
+* Data is saved in a local JSON file
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If the backend is not running, the app still works using localStorage (for demo/deployment purposes).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tech stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* React.js (Frontend)
+* Node.js + Express (Backend)
+* Fetch API (AJAX)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend
 
-### Code Splitting
+```bash
+cd frontend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend
 
-### Analyzing the Bundle Size
+```bash
+cd backend
+npm install
+node server.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* The UI is kept simple and user-friendly (kiosk style)
+* The question structure is flexible, so new questions can be added easily
+* Focus was on functionality, flow, and usability rather than over-designing
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Live Demo
 
-### Deployment
+[https://customer-survey-app.netlify.app/]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## GitHub
 
-### `npm run build` fails to minify
+[Add your repo link here]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
