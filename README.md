@@ -83,6 +83,6 @@ node server.js
 
 ## GitHub
 
-[Add your repo link here]
+https://github.com/PoornimaSrinithi/survey-kiosk-app
 
 ---
